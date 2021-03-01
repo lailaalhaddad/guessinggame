@@ -30,6 +30,7 @@ const Input = () => {
           <GuessBox
             placeholder="Guess your number from 1 to 100"
             onChange={(event) => setNumbers(event.target.value)}
+            disabled={numbers == generate}
           />
         </div>
         <div>
