@@ -6,11 +6,12 @@ import { GuessBox } from "../styles";
 
 const Input = () => {
   const [numbers, setNumbers] = useState(0);
-  const [attempt, attemptState] = useState(30);
-  const [generate, setRandom] = useState(Math.floor(Math.random() * 11));
+  const [attempt, attemptState] = useState(10);
+  const [generate, setRandom] = useState(Math.floor(Math.random() * 101));
 
   const takenumber = () => {
-    if (numbers === generate) {
+    setRandom(generate);
+    if (numbers == generate) {
       return alert("You win!");
     } else if (attempt === 0) {
       return alert("You loses the game :)");
@@ -27,7 +28,7 @@ const Input = () => {
         {console.log(numbers)}
         <div>
           <GuessBox
-            placeholder="Guess your number from 1 to 10"
+            placeholder="Guess your number from 1 to 100"
             onChange={(event) => setNumbers(event.target.value)}
           />
         </div>
